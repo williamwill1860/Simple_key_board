@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>確認頁面</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        // 獲取 URL 中的 input_1 參數值
+        var urlParams = new URLSearchParams(window.location.search);
+        var selectedValue = urlParams.get("input_1");
+        if (selectedValue) {
+            // 將符號分割成數組
+            var symbols = selectedValue.split(",");
+
+            // 顯示選擇的符號
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "請選擇一個注音：";
+
+            symbols.forEach(function(symbol) {
+                var button = document.createElement("button");
+                button.textContent = symbol;
+                button.addEventListener("click", function() {
+                    resultElement.textContent = "您選擇的注音是：" + symbol;
+                    window.location = "index.html?selected_symbol=" + symbol;
+                });
+                resultElement.appendChild(button);
+            });
+        } else {
+            selectedValue = urlParams.get("input_2");
+            // 將符號分割成數組
+            var symbols = selectedValue.split(",");
+
+            // 顯示選擇的符號
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "請選擇聲調：";
+
+            symbols.forEach(function(symbol) {
+                var button = document.createElement("button");
+                button.textContent = symbol;
+                button.addEventListener("click", function() {
+                    resultElement.textContent = "您選擇的聲調是：" + symbol;
+                    window.location = "index.html?selected_symbol=" + symbol;
+                });
+                resultElement.appendChild(button);
+            });
+            //document.getElementById("result").textContent = "未提交有效數據。";
+        }
+    </script>
+
+</body>
+</html>

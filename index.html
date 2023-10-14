@@ -9,27 +9,37 @@
 
     </head>
     <body>
-        <form method = "post" action = "confirm.php">
-            <input type="submit"name="input_1"value="ㄅㄆㄇㄈ">
-            <input type="submit"name="input_1"value="ㄉㄊㄋㄌ">
-            <input type="submit"name="input_1"value="ㄍㄎㄏㄐ">
-            <input type="submit"name="input_1"value="ㄑㄒㄓ">
-            <input type="submit"name="input_1"value="ㄔㄕㄖ">
-            <input type="submit"name="input_1"value="ㄗㄘㄙ">
-            <input type="submit"name="input_2"value="ㄧㄨㄩ">
-            <input type="submit"name="input_3"value="ㄚㄛㄜㄝ">
-            <input type="submit"name="input_3"value="ㄞㄟㄠㄡ">
-            <input type="submit"name="input_3"value="ㄢㄣㄤㄥㄦ">
-            <input type="submit"name="input_4"value="_ˊ">
-            <input type="submit"name="input_4"value="ˇˋ˙">
-
-            
+        <form method = "get" action = "confirm.html">
+            <input type="submit"name="input_1"value="ㄅ,ㄆ,ㄇ,ㄈ">
+            <input type="submit"name="input_1"value="ㄉ,ㄊ,ㄋ,ㄌ">
+            <input type="submit"name="input_1"value="ㄍ,ㄎ,ㄏ,ㄐ">
+            <input type="submit"name="input_1"value="ㄑ,ㄒ,ㄓ">
+            <input type="submit"name="input_1"value="ㄔ,ㄕ,ㄖ">
+            <input type="submit"name="input_1"value="ㄗ,ㄘ,ㄙ">
+            <input type="submit"name="input_1"value="ㄧ,ㄨ,ㄩ">
+            <input type="submit"name="input_1"value="ㄚ,ㄛ,ㄜ,ㄝ">
+            <input type="submit"name="input_1"value="ㄞ,ㄟ,ㄠ,ㄡ">
+            <input type="submit"name="input_1"value="ㄢ,ㄣ,ㄤ,ㄥ,ㄦ">
+            <input type="submit"name="input_2"value="1,2,3,4,5">
         </form>
+        <p id="selectedSymbol"></p>
 
+        </div>
         <script>
-            function Function_BPM1(){
-                alert("收到，進入ㄅㄆㄇ");
+            // 獲取 URL 中的 selected_symbol 參數值
+            var urlParams = new URLSearchParams(window.location.search);
+            var selectedSymbol = urlParams.get("selected_symbol");
+        
+            //創建輸出陣列
+            var show =[];
+            var showLon=show.length;
+
+            if (selectedSymbol) {
+                var selectedSymbolElement = document.getElementById("selectedSymbol");
+                selectedSymbolElement.textContent = "您選擇的注音是：" + selectedSymbol;
+                show[showLon]= selectedSymbol;
             }
+            console.log(show)
         </script>
     </body>
 </html>
