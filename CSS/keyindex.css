@@ -3,13 +3,27 @@
     width:100px;
     height:35px;
     flex-direction: column;
+    box-shadow: 0px 5px 15px -5px #00000040;
 }
 body{
     width: 400px;
     margin:0 auto;
     float:center;
 }
-p{
+.inputs{
+    text-align: center;
+    transform: translateY(20%); 
+    flex-wrap:wrap 
+}
+.output{
+    text-align: center;
+    transform: translateY(30%);
     width: 400px;
     margin:0 auto;
+}
+.outWord{
+    width: 200px;
+    transform: translatex(50%);
+    background: #f1f1f1;
+    text-align: left;
 }

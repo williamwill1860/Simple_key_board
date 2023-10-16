@@ -1,6 +1,8 @@
 
-body{
+body{    
     width: 400px;
+    transform: translateY(50%);
+    transform: translatex(25%);
     margin:0 auto;
     float:center;
 }
