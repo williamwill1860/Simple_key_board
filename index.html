@@ -19,17 +19,17 @@
         </form>
         <button id="clearLocalStorageButton">清除</button>
         <button id="backspaceButton">退格</button>
-        <p id="selectedSymbols"></p>
+        <p id="selectedSymbols">:</p>
 
         <script>
-            // 从 localStorage 中获取已选择的注音符号
-            var selectedSymbols = localStorage.getItem("selectedSymbols");
+            
+            var selectedSymbols = localStorage.getItem("selectedSymbols");// 從 localStorage 中獲取歷史資料
             var clearLocalStorageButton = document.getElementById("clearLocalStorageButton");//清空鍵
             var backspaceButton = document.getElementById("backspaceButton"); //退格鍵
             if (selectedSymbols) {
                 var symbolsArray = selectedSymbols.split(",");
                 var selectedSymbolsElement = document.getElementById("selectedSymbols");
-                selectedSymbolsElement.textContent = "：" + symbolsArray.join(", ");
+                selectedSymbolsElement.textContent = ":" + symbolsArray.join(", ");
             }
             clearLocalStorageButton.addEventListener("click", function() {
 

@@ -6,34 +6,45 @@
 </head>
 <body>
     <p id="result"></p>
+    <button id="back"onclick="backfunction()">回上頁</button>
+    <p id="GetAllText">:</p> 
     <script>
         var urlParams = new URLSearchParams(window.location.search);//網頁傳值
         var selectedValue = urlParams.get("input_1");
-
+        var selectedSymbols = localStorage.getItem("selectedSymbols");//儲存歷史資料
+        function backfunction(){
+            window.location = "index.html";
+        }
         if (selectedValue) {
             var symbols = selectedValue.split(",");
             var resultElement = document.getElementById("result");
 
+
             symbols.forEach(function (symbol) {
                 var button = document.createElement("button");
+
                 button.textContent = symbol;
                 button.addEventListener("click", function () {
 
-                    // 将选择的注音符号存储在localStorage中
+                    // 將選擇的注音符號儲存在localStorage中
                     var selectedSymbols = localStorage.getItem("selectedSymbols") || "";
                     if (selectedSymbols) {
-                        selectedSymbols += ",";
+                        selectedSymbols += " ";
                     }
                     selectedSymbols += symbol;
                     localStorage.setItem("selectedSymbols", selectedSymbols);
 
-                    // 跳转回index.html
+                    // 跳回index.html
                     window.location = "index.html";
                 });
                 resultElement.appendChild(button);
             });
         } else {
             resultElement.textContent = "發生錯誤，傳遞數值錯誤或數值為空。";
+        }
+        if(selectedSymbols){
+            GetAllText.textContent = ":" + selectedSymbols; //將歷史資料顯示在網頁上
+            //console.log(GetAllText);
         }
     </script>
 </body>
