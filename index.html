@@ -6,26 +6,27 @@
         @import url(CSS/keyindex.css);
     </style>
 </head>
+
     <body>
         <div class="inputs">
-                <form method="get" action="confirm.html">
-                    <input class="input_1"type="submit"name="input_1"value="ㄅ ㄆ ㄇ ㄈ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄉ ㄊ ㄋ ㄌ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄍ ㄎ ㄏ ㄐ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄑ ㄒ ㄓ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄔ ㄕ ㄖ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄗ ㄘ ㄙ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄧ ㄨ ㄩ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄚ ㄛ ㄜ ㄝ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄞ ㄟ ㄠ ㄡ">
-                    <input class="input_1"type="submit"name="input_1"value="ㄢ ㄣ ㄤ ㄥ ㄦ">
-                    <input class="input_1"type="submit"name="input_1"value="_ ˊ ˇ ˋ ˙">
+                <form  method="get" action="confirm.html">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_0"class="input_1"type="submit"name="input_1"value="ㄅ ㄆ ㄇ ㄈ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_1"class="input_1"type="submit"name="input_1"value="ㄉ ㄊ ㄋ ㄌ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_2"class="input_1"type="submit"name="input_1"value="ㄍ ㄎ ㄏ ㄐ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_3"class="input_1"type="submit"name="input_1"value="ㄑ ㄒ ㄓ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_4"class="input_1"type="submit"name="input_1"value="ㄔ ㄕ ㄖ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_5"class="input_1"type="submit"name="input_1"value="ㄗ ㄘ ㄙ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_6"class="input_1"type="submit"name="input_1"value="ㄧ ㄨ ㄩ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_7"class="input_1"type="submit"name="input_1"value="ㄚ ㄛ ㄜ ㄝ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_8"class="input_1"type="submit"name="input_1"value="ㄞ ㄟ ㄠ ㄡ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_9"class="input_1"type="submit"name="input_1"value="ㄢ ㄣ ㄤ ㄥ ㄦ">
+                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_10"class="input_1"type="submit"name="input_1"value="_ ˊ ˇ ˋ ˙">
                 </form>
         </div>
         <div class="output">
-            <p class="outWord"id="selectedSymbols">:</p>
-            <button class="input_1"id="backspaceButton">退格</button>
-            <button class="input_1"id="clearLocalStorageButton">清除</button>
+            <p onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"class="outWord"id="selectedSymbols">:</p>
+            <button onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"class="input_1"id="backspaceButton">退格</button>
+            <button onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"class="input_1"id="clearLocalStorageButton">清除</button>
         </div>
         
 
@@ -35,6 +36,8 @@
             var clearLocalStorageButton = document.getElementById("clearLocalStorageButton");//清空鍵
             var backspaceButton = document.getElementById("backspaceButton"); //退格鍵
             if (selectedSymbols) {
+                
+                console.log(selectedSymbols);
                 var symbolsArray = selectedSymbols.split(" ");
                 var selectedSymbolsElement = document.getElementById("selectedSymbols");
                 selectedSymbolsElement.textContent = ":" + symbolsArray.join(" ");
@@ -68,6 +71,15 @@
                     selectedSymbolsElement.textContent = "：" + symbolsArray.join(" ");
                 }
             });
+            //選到按鈕變色
+            function Mychose(id){
+                var chose = id;
+                document.getElementById(chose).style="background-color:#f1f1f1;background-color: aliceblue ;"
+            }
+            function Mychose2(id){
+                var chose = id;
+                document.getElementById(chose).style="background-color:#f1f1f25"
+            }
         </script>
     </body>
 </html>

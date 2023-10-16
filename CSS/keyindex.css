@@ -2,8 +2,7 @@
 .input_1{
     width:100px;
     height:35px;
-    flex-direction: column;
-    box-shadow: 0px 5px 15px -5px #00000040;
+    box-shadow: 0px 5px 10px -5px #746f6fd8;
 }
 body{
     width: 400px;
@@ -13,7 +12,7 @@ body{
 .inputs{
     text-align: center;
     transform: translateY(20%); 
-    flex-wrap:wrap 
+    flex-wrap:wrap ;
 }
 .output{
     text-align: center;
