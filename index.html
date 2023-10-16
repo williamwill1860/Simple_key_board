@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        
-        <style>
-            
-        </style>
-
-    </head>
+<head>
+    <meta charset="UTF-8">
+</head>
     <body>
-        <form method = "get" action = "confirm.html">
+        <form method="get" action="confirm.html">
             <input type="submit"name="input_1"value="ㄅ,ㄆ,ㄇ,ㄈ">
             <input type="submit"name="input_1"value="ㄉ,ㄊ,ㄋ,ㄌ">
             <input type="submit"name="input_1"value="ㄍ,ㄎ,ㄏ,ㄐ">
@@ -20,26 +15,51 @@
             <input type="submit"name="input_1"value="ㄚ,ㄛ,ㄜ,ㄝ">
             <input type="submit"name="input_1"value="ㄞ,ㄟ,ㄠ,ㄡ">
             <input type="submit"name="input_1"value="ㄢ,ㄣ,ㄤ,ㄥ,ㄦ">
-            <input type="submit"name="input_2"value="1,2,3,4,5">
+            <input type="submit"name="input_1"value="_,ˊ,ˇ,ˋ,˙">
         </form>
-        <p id="selectedSymbol"></p>
+        <button id="clearLocalStorageButton">清除</button>
+        <button id="backspaceButton">退格</button>
+        <p id="selectedSymbols"></p>
 
-        </div>
         <script>
-            // 獲取 URL 中的 selected_symbol 參數值
-            var urlParams = new URLSearchParams(window.location.search);
-            var selectedSymbol = urlParams.get("selected_symbol");
-        
-            //創建輸出陣列
-            var show =[];
-            var showLon=show.length;
-
-            if (selectedSymbol) {
-                var selectedSymbolElement = document.getElementById("selectedSymbol");
-                selectedSymbolElement.textContent = "您選擇的注音是：" + selectedSymbol;
-                show[showLon]= selectedSymbol;
+            // 从 localStorage 中获取已选择的注音符号
+            var selectedSymbols = localStorage.getItem("selectedSymbols");
+            var clearLocalStorageButton = document.getElementById("clearLocalStorageButton");//清空鍵
+            var backspaceButton = document.getElementById("backspaceButton"); //退格鍵
+            if (selectedSymbols) {
+                var symbolsArray = selectedSymbols.split(",");
+                var selectedSymbolsElement = document.getElementById("selectedSymbols");
+                selectedSymbolsElement.textContent = "：" + symbolsArray.join(", ");
             }
-            console.log(show)
+            clearLocalStorageButton.addEventListener("click", function() {
+
+            // 清除 localStorage 中的 selectedSymbols
+                localStorage.removeItem("selectedSymbols");
+                
+                // 更新页面上的显示
+                var selectedSymbolsElement = document.getElementById("selectedSymbols");
+                selectedSymbolsElement.textContent = "清除目前所有的輸入";
+            });
+            
+            //退格功能
+            backspaceButton.addEventListener("click", function() {
+                // 从 localStorage 中获取已选择的注音符号
+                var selectedSymbols = localStorage.getItem("selectedSymbols");
+                
+                if (selectedSymbols) {
+                    var symbolsArray = selectedSymbols.split(",");
+                    
+                    // 删除最后一个值
+                    symbolsArray.pop();
+                    
+                    // 更新 localStorage 中的值
+                    localStorage.setItem("selectedSymbols", symbolsArray.join(","));
+                    
+                    // 更新页面上的显示
+                    var selectedSymbolsElement = document.getElementById("selectedSymbols");
+                    selectedSymbolsElement.textContent = "：" + symbolsArray.join(", ");
+                }
+            });
         </script>
     </body>
 </html>
