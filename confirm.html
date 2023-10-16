@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>確認頁面</title>
+    <style>
+        @import url(CSS/keyconfirm.css);
+    </style>
 </head>
 <body>
     <p id="result"></p>
-    <button id="back"onclick="backfunction()">回上頁</button>
+    <button class="back"id="back"onclick="backfunction()">回上頁</button>
     <p id="GetAllText">:</p> 
     <script>
         var urlParams = new URLSearchParams(window.location.search);//網頁傳值
         var selectedValue = urlParams.get("input_1");
         var selectedSymbols = localStorage.getItem("selectedSymbols");//儲存歷史資料
+        
+        //=====================回上一頁功能==================
         function backfunction(){
             window.location = "index.html";
         }
+        //======================顯示所選的按鈕功能===================
         if (selectedValue) {
-            var symbols = selectedValue.split(",");
+            var symbols = selectedValue.split(" ");
             var resultElement = document.getElementById("result");
 
 
@@ -42,8 +48,9 @@
         } else {
             resultElement.textContent = "發生錯誤，傳遞數值錯誤或數值為空。";
         }
+        //===============將歷史資料顯示在網頁上=======================
         if(selectedSymbols){
-            GetAllText.textContent = ":" + selectedSymbols; //將歷史資料顯示在網頁上
+            GetAllText.textContent = ":" + selectedSymbols; 
             //console.log(GetAllText);
         }
     </script>

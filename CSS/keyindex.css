@@ -1,0 +1,15 @@
+
+.input_1{
+    width:100px;
+    height:35px;
+    flex-direction: column;
+}
+body{
+    width: 400px;
+    margin:0 auto;
+    float:center;
+}
+p{
+    width: 400px;
+    margin:0 auto;
+}

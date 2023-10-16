@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
     <meta charset="UTF-8">
+    <style>
+        @import url(CSS/keyindex.css);
+    </style>
 </head>
     <body>
-        <form method="get" action="confirm.html">
-            <input type="submit"name="input_1"value="ㄅ,ㄆ,ㄇ,ㄈ">
-            <input type="submit"name="input_1"value="ㄉ,ㄊ,ㄋ,ㄌ">
-            <input type="submit"name="input_1"value="ㄍ,ㄎ,ㄏ,ㄐ">
-            <input type="submit"name="input_1"value="ㄑ,ㄒ,ㄓ">
-            <input type="submit"name="input_1"value="ㄔ,ㄕ,ㄖ">
-            <input type="submit"name="input_1"value="ㄗ,ㄘ,ㄙ">
-            <input type="submit"name="input_1"value="ㄧ,ㄨ,ㄩ">
-            <input type="submit"name="input_1"value="ㄚ,ㄛ,ㄜ,ㄝ">
-            <input type="submit"name="input_1"value="ㄞ,ㄟ,ㄠ,ㄡ">
-            <input type="submit"name="input_1"value="ㄢ,ㄣ,ㄤ,ㄥ,ㄦ">
-            <input type="submit"name="input_1"value="_,ˊ,ˇ,ˋ,˙">
-        </form>
-        <button id="clearLocalStorageButton">清除</button>
-        <button id="backspaceButton">退格</button>
-        <p id="selectedSymbols">:</p>
+        <div class="inputs">
+            <form method="get" action="confirm.html">
+                <input class="input_1"type="submit"name="input_1"value="ㄅ ㄆ ㄇ ㄈ">
+                <input class="input_1"type="submit"name="input_1"value="ㄉ ㄊ ㄋ ㄌ">
+                <input class="input_1"type="submit"name="input_1"value="ㄍ ㄎ ㄏ ㄐ">
+                <input class="input_1"type="submit"name="input_1"value="ㄑ ㄒ ㄓ">
+                <input class="input_1"type="submit"name="input_1"value="ㄔ ㄕ ㄖ">
+                <input class="input_1"type="submit"name="input_1"value="ㄗ ㄘ ㄙ">
+                <input class="input_1"type="submit"name="input_1"value="ㄧ ㄨ ㄩ">
+                <input class="input_1"type="submit"name="input_1"value="ㄚ ㄛ ㄜ ㄝ">
+                <input class="input_1"type="submit"name="input_1"value="ㄞ ㄟ ㄠ ㄡ">
+                <input class="input_1"type="submit"name="input_1"value="ㄢ ㄣ ㄤ ㄥ ㄦ">
+                <input class="input_1"type="submit"name="input_1"value="_ ˊ ˇ ˋ ˙ ">
+            </form>
+        </div>
+        <div class="output">
+            <p id="selectedSymbols">:</p>
+            <button class="input_1"id="backspaceButton">退格</button>
+            <button class="input_1"id="clearLocalStorageButton">清除</button>
+        </div>
 
         <script>
             
@@ -27,16 +34,16 @@
             var clearLocalStorageButton = document.getElementById("clearLocalStorageButton");//清空鍵
             var backspaceButton = document.getElementById("backspaceButton"); //退格鍵
             if (selectedSymbols) {
-                var symbolsArray = selectedSymbols.split(",");
+                var symbolsArray = selectedSymbols.split(" ");
                 var selectedSymbolsElement = document.getElementById("selectedSymbols");
-                selectedSymbolsElement.textContent = ":" + symbolsArray.join(", ");
+                selectedSymbolsElement.textContent = ":" + symbolsArray.join(" ");
             }
             clearLocalStorageButton.addEventListener("click", function() {
 
             // 清除 localStorage 中的 selectedSymbols
                 localStorage.removeItem("selectedSymbols");
                 
-                // 更新页面上的显示
+                // 更新頁面上的顯示
                 var selectedSymbolsElement = document.getElementById("selectedSymbols");
                 selectedSymbolsElement.textContent = "清除目前所有的輸入";
             });
@@ -47,17 +54,17 @@
                 var selectedSymbols = localStorage.getItem("selectedSymbols");
                 
                 if (selectedSymbols) {
-                    var symbolsArray = selectedSymbols.split(",");
+                    var symbolsArray = selectedSymbols.split(" ");
                     
                     // 删除最后一个值
                     symbolsArray.pop();
                     
                     // 更新 localStorage 中的值
-                    localStorage.setItem("selectedSymbols", symbolsArray.join(","));
+                    localStorage.setItem("selectedSymbols", symbolsArray.join(" "));
                     
-                    // 更新页面上的显示
+                    // 更新頁面上的顯示
                     var selectedSymbolsElement = document.getElementById("selectedSymbols");
-                    selectedSymbolsElement.textContent = "：" + symbolsArray.join(", ");
+                    selectedSymbolsElement.textContent = "：" + symbolsArray.join(" ");
                 }
             });
         </script>
