@@ -8,6 +8,7 @@ body{
 
 .input_1{
     background-color: black;
+    transform: translatex(30%);
     width:200px;
     line-height:1.6;
     position: relative;
@@ -49,5 +50,5 @@ body{
     
 }
 .back{
-    transform: translatex(65%);
+    transform: translatex(55%);
 }
