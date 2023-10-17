@@ -1,5 +1,6 @@
 
 .input_1{
+    border-radius: 50px 50px 50px 50px;
     display: inline-block;
     background-color: black;
     width:200px;
@@ -35,6 +36,9 @@
 .input_1:nth-last-child(2){
     filter: hue-rotate(0deg);
 }
+.input_1:nth-last-child(1){
+    filter: hue-rotate(225deg);
+}
 
 body{
     width: 800px;
@@ -56,10 +60,12 @@ body{
     margin-bottom: 5px;
 }
 .outWord{
+    top:20px;
     width: 400px;
     height:30px;
     transform: translatex(20%);
     background: #f1f1f1;
+    font-weight: bold;
     text-align: left;
     display: inline-block;
     position: absolute;
