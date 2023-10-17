@@ -1,8 +1,40 @@
 
-body{    
-    width: 400px;
-    transform: translateY(50%);
-    transform: translatex(25%);
+body{
+    width: 800px;
     margin:0 auto;
     float:center;
+    background-color: black;
+}
+.output{
+    width: 400px;
+    height:30px;
+    transform: translatex(50%);
+    background: #f1f1f1;
+    text-align: left;
+    
+}
+.input_1{
+    background-color: black;
+    width:200px;
+    line-height:1.6;
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #03e9f4;
+    font-size: 25px;
+    font-weight: bold;
+    transition: .5s;
+    overflow: hidden;
+    margin: 10px; 
+}
+.input_1:hover{
+    background-color: #03e9f4;
+    color: black;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transform,#005)
 }

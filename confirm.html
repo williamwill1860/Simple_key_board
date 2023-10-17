@@ -8,14 +8,15 @@
     </style>
 </head>
 <body>
+    <p class="output"id="GetAllText">:</p> 
+    
+    <button class="input_1"id="back"onclick="backfunction()">回上頁</button>
     <p id="result"></p>
-    <button class="back"id="back"onclick="backfunction()">回上頁</button>
-    <p id="GetAllText">:</p> 
     <script>
         var urlParams = new URLSearchParams(window.location.search);//網頁傳值
         var selectedValue = urlParams.get("input_1");
         var selectedSymbols = localStorage.getItem("selectedSymbols");//儲存歷史資料
-        
+
         //=====================回上一頁功能==================
         function backfunction(){
             window.location = "index.html";
@@ -24,10 +25,13 @@
         if (selectedValue) {
             var symbols = selectedValue.split(" ");
             var resultElement = document.getElementById("result");
+            
+                
 
 
             symbols.forEach(function (symbol) {
                 var button = document.createElement("button");
+                button.classList.add("input_1");
 
                 button.textContent = symbol;
                 button.addEventListener("click", function () {
