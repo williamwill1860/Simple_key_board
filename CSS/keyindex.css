@@ -1,8 +1,10 @@
 
 .input_1{
+    display: inline-block;
     background-color: black;
     width:200px;
     line-height:1.6;
+    font-size: 25px;
     position: relative;
     display: inline-block;
     padding: 25px 30px;
@@ -31,11 +33,9 @@
     filter: hue-rotate(90deg);
 }
 .input_1:nth-last-child(2){
-    filter: hue-rotate(90deg);
-}
-.input_1:last-child{
     filter: hue-rotate(0deg);
 }
+
 body{
     width: 800px;
     margin:0 auto;
@@ -45,13 +45,12 @@ body{
 .inputs{
     
     text-align: center;
-    transform: translateY(20%); 
+    transform: translateY(10%); 
     flex-wrap:wrap ;
 
 }
 .output{
-    text-align: center;
-    transform: translateY(30%);
+    transform: translateY(20%);
     width: 800px;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -59,7 +58,12 @@ body{
 .outWord{
     width: 400px;
     height:30px;
-    transform: translatex(50%);
+    transform: translatex(20%);
     background: #f1f1f1;
     text-align: left;
+    display: inline-block;
+    position: absolute;
+}
+.clear{
+    transform: translatex(65%);
 }
