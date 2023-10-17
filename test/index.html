@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>第一个HTML页面</title>
+</head>
+<body>
+    <h1>第一个HTML页面</h1>
+    <p>请选择一个按钮：</p>
+    
+    <!-- 三个按钮 -->
+    <button id="button1">按钮1</button>
+    <button id="button2">按钮2</button>
+    <button id="button3">按钮3</button>
+    
+    <script>
+        // 添加事件监听器，当按钮被点击时，跳转到第二个HTML页面并传递按钮的位置
+        document.getElementById("button1").addEventListener("click", function() {
+            const buttonRect = this.getBoundingClientRect();
+            window.location.href = `second.html?buttonX=${buttonRect.x}&buttonY=${buttonRect.y}`;
+        });
+        document.getElementById("button2").addEventListener("click", function() {
+            const buttonRect = this.getBoundingClientRect();
+            window.location.href = `second.html?buttonX=${buttonRect.x}&buttonY=${buttonRect.y}`;
+        });
+        document.getElementById("button3").addEventListener("click", function() {
+            const buttonRect = this.getBoundingClientRect();
+            window.location.href = `second.html?buttonX=${buttonRect.x}&buttonY=${buttonRect.y}`;
+        });
+    </script>
+</body>
+</html>

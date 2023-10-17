@@ -10,23 +10,23 @@
     <body>
         <div class="inputs">
                 <form  method="get" action="confirm.html">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_0"class="input_1"type="submit"name="input_1"value="ㄅ ㄆ ㄇ ㄈ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_1"class="input_1"type="submit"name="input_1"value="ㄉ ㄊ ㄋ ㄌ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_2"class="input_1"type="submit"name="input_1"value="ㄍ ㄎ ㄏ ㄐ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_3"class="input_1"type="submit"name="input_1"value="ㄑ ㄒ ㄓ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_4"class="input_1"type="submit"name="input_1"value="ㄔ ㄕ ㄖ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_5"class="input_1"type="submit"name="input_1"value="ㄗ ㄘ ㄙ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_6"class="input_1"type="submit"name="input_1"value="ㄧ ㄨ ㄩ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_7"class="input_1"type="submit"name="input_1"value="ㄚ ㄛ ㄜ ㄝ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_8"class="input_1"type="submit"name="input_1"value="ㄞ ㄟ ㄠ ㄡ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_9"class="input_1"type="submit"name="input_1"value="ㄢ ㄣ ㄤ ㄥ ㄦ">
-                    <input onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"id = "input_10"class="input_1"type="submit"name="input_1"value="_ ˊ ˇ ˋ ˙">
+                    <input id = "input_0"class="input_1"type="submit"name="input_1"value="ㄅ ㄆ ㄇ ㄈ">
+                    <input id = "input_1"class="input_1"type="submit"name="input_1"value="ㄉ ㄊ ㄋ ㄌ">
+                    <input id = "input_2"class="input_1"type="submit"name="input_1"value="ㄍ ㄎ ㄏ ㄐ">
+                    <input id = "input_3"class="input_1"type="submit"name="input_1"value="ㄑ ㄒ ㄓ">
+                    <input id = "input_4"class="input_1"type="submit"name="input_1"value="ㄔ ㄕ ㄖ">
+                    <input id = "input_5"class="input_1"type="submit"name="input_1"value="ㄗ ㄘ ㄙ">
+                    <input id = "input_6"class="input_1"type="submit"name="input_1"value="ㄧ ㄨ ㄩ">
+                    <input id = "input_7"class="input_1"type="submit"name="input_1"value="ㄚ ㄛ ㄜ ㄝ">
+                    <input id = "input_8"class="input_1"type="submit"name="input_1"value="ㄞ ㄟ ㄠ ㄡ">
+                    <input id = "input_9"class="input_1"type="submit"name="input_1"value="ㄢ ㄣ ㄤ ㄥ ㄦ">
+                    <input id = "input_10"class="input_1"type="submit"name="input_1"value="_ ˊ ˇ ˋ ˙">
                 </form>
         </div>
         <div class="output">
             <p class="outWord"id="selectedSymbols">:</p>
-            <button onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"class="input_1"id="backspaceButton">退格</button>
-            <button onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"class="input_1"id="clearLocalStorageButton">清除</button>
+            <button class="input_1"id="backspaceButton">退格</button>
+            <button class="input_1"id="clearLocalStorageButton">清除</button>
         </div>
         
 
@@ -71,7 +71,7 @@
                     selectedSymbolsElement.textContent = "：" + symbolsArray.join(" ");
                 }
             });
-            //選到按鈕變色
+            /*//選到按鈕變色
             function Mychose(id){
                 var chose = id;
                 document.getElementById(chose).style="background-color:#f1f1f1;background-color: aliceblue ;"
@@ -79,7 +79,8 @@
             function Mychose2(id){
                 var chose = id;
                 document.getElementById(chose).style="background-color:#f1f1f25"
-            }
+            }*/
+            //onmouseover="Mychose(id)"onmouseout = "Mychose2(id)"
         </script>
     </body>
 </html>

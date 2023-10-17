@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>第二个HTML页面</title>
+</head>
+<body>
+    <h1>第二个HTML页面</h1>
+    <p>这是第二个HTML页面，包含要移动的按钮：</p>
+    
+    <!-- 用于定位的占位元素 -->
+    <div id="button-position" class="button-position">
+        <button id="button4">按钮4</button>
+    </div>
+    
+    <script>
+        // 解析URL中的参数以获取按钮的位置信息
+        const params = new URLSearchParams(window.location.search);
+        const buttonX = params.get("buttonX");
+        const buttonY = params.get("buttonY");
+        
+        if (buttonX !== null && buttonY !== null) {
+            // 移动按钮到指定位置
+            const button = document.getElementById("button4");
+            button.style.position = "absolute";
+            button.style.left = `${buttonX}px`;
+            button.style.top = `${buttonY}px`;
+            console.log(button.style.left,button.style.top)
+        }
+    </script>
+</body>
+</html>
